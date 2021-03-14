@@ -1,10 +1,11 @@
-# Learning-JavaScript-My-Way
+Learning-JavaScript-My-Way
+
 My own way to learn JavaScript. Simple and to the point. *and hopefully fun too!*
 ------------------------------------------------------------------------------------------------------------------------------
 
 So there are two main things that I have learned off the bat about JavaScript:
-1. *It is confusing as hell.
-2. *Trying to find a tutorial that teaches you in laymen's terms about either costs you and arm and a leg, or is non-existant.
+1. *It is confusing as hell.*
+2. *Trying to find a tutorial that teaches you in laymen's terms about either costs you and arm and a leg, or is non-existant.*
 
 So here's my bright idea.
 
@@ -16,3 +17,4 @@ I will be doing things from different sources and other codenewbies are welcome 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 Don't ask me how to do pull requests or sync repos or any of that other stuff, because I am still trying to figure that out. One thing at a time lol.  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
+PS. I am really starting to loathe Markdown too 😞
