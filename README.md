@@ -11,5 +11,5 @@ I am going to be teaching myself Javascript and posting it in this repository. (
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  Don't ask me how to do pull requests or sync repos or any of that other stuff, because I am still trying to figure that out. One thing at a time lol.  |
+Don't ask me how to do pull requests or sync repos or any of that other stuff, because I am still trying to figure that out. One thing at a time lol.  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
