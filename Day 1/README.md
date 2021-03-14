@@ -35,7 +35,7 @@ and finally *Date()* is what the JS is supposed to give when it's all said and d
 Slap a semicolon and a closing fancy bracket and we are good to go.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#That of course is the breakdown. To put it more simply:
+That of course is the breakdown. To put it more simply:
 
 JS = instructions to the browser on how to make things act or show on our page. 
 
