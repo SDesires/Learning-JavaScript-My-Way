@@ -1,4 +1,4 @@
-#Day 1: Diving in headfirst
+Day 1: Diving in headfirst
 
 This Folder contains an HTML file, a CSS file and a JS file.
 
