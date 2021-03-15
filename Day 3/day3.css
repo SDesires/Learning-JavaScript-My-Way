@@ -1,0 +1,31 @@
+.bttn1 {
+   background-color: red;
+   color: white;
+   }
+   
+.bttn1:hover {
+   background-color: white;
+   color: red;
+   }
+   
+   
+.bttn2 {
+   background-color: purple;
+   color: yellow;
+   }
+   
+.bttn2:hover {
+   background-color: yellow;
+   color: purple;
+   }
+   
+   
+.bttn3 {
+   background-color: black;
+   color: white;
+   }
+   
+.bttn3:hover {
+   background-color: white;
+   color: black;
+   }
