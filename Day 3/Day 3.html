@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Day 3: Changing Different Things</title>
+    <link rel="stylesheet" href="day3.css" />
+  </head>
+  <body>
+    <h2>Day 2: Changing Different  Things</h2>
+	<button class="bttn1" type="button" onclick="document.getElementById('fontSize').style.fontSize='35px'">
+Click me to change the font size</button>
+
+    <button class="bttn2" button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click me to change the text</button>
+	
+    <button class="bttn3" type="button" onclick="document.getElementById('myImage').src='unicorn2.png'">
+Click me to change the image</button>
+
+<p id="fontSize">Watch this text change when you press the first button!</p>
+<p id="demo">Watch this text change when you press the second button!</p>
+<p>Watch this image change when you click the third button!</p>
+<img id="myImage" src="unicorn1.png" alt="a unicorn with a multicolor space overlay on it">
+<p>Source: <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank">w3schools</a></p>
+  </body>
+</html>
