@@ -1,0 +1,9 @@
+body {
+	background-color: #00000f;
+    opacity: 0.9;
+    background-image:  repeating-linear-gradient(45deg, #1c0032 25%, transparent 25%, transparent 75%, #1c0032 75%, #1c0032), repeating-linear-gradient(45deg, #1c0032 25%, #00000f 25%, #00000f 75%, #1c0032 75%, #1c0032);
+    background-position: 0 0, 5px 5px;
+    background-size: 10px 10px;
+	color: #33FFFF;
+	font-size: 19px;
+}
