@@ -1,0 +1,1649 @@
+[Music]
+do you like javascript and music like me
+then this video is for you let me show
+you the real power of vanilla javascript
+and html canvas element
+in this tutorial i will cover sounds
+from complete basics
+to advanced and by the end of this video
+you will be able to make
+shapes and colors react to music and
+create beautiful audio visualizers for
+your creative coding projects
+and when you understand the basics i'll
+teach you how to make this melody maker
+application
+where you click to add notes on a stave
+and see what melody comes out
+so remember to check part 2 linked in
+the description you ready
+[Music]
+in index.html i create basic web page
+markup
+i link style css file
+and my javascript file
+and i create a button element with an id
+of button
+1.
+i need to give the button some text
+let's just do button one like this
+in style css i will give my body element
+black background for now
+that's it for styling we will come back
+here later but most of this tutorial we
+will stay in script.js file
+first i want to grab hold of this button
+element with javascript
+so i create a constant variable called
+for example button1
+and i set it equal to
+document.getelementbyid
+and i pass it id i gave my button button
+1 i take my button 1 variable and i call
+art event listener on it
+add event listener takes two arguments
+what type of event we want to listen for
+and a callback function that contains
+code we want to run
+every time that event occurs i will
+listen for a click event on this button
+and every time we click
+i will add a console.log for now
+let's open browser console to see if it
+works
+yes whenever we click the button we get
+a new console log
+perfect what if i want to play a short
+sound file instead every time i click
+this button
+that's very simple as well let me show
+you how to do it
+up on line 2 i create a new variable
+called audio 1
+and i set it equal to new audio like
+this
+new is a special keyword in javascript
+and audio is a built-in class
+constructor
+this is a beginner tutorial so all we
+need to understand here is that by
+calling new audio
+we create a new instance of built-in
+javascript audio class
+which will create a new blank html audio
+element
+this is the same as if we wrote actual
+html audio tag
+in our index.html file this audio object
+can be attached to a web page with
+javascript for user to interact with
+or it can just stay off screen and be
+played
+for us to be able to play it we need to
+give it some source which can be any
+sound file
+it will play all the common sound file
+formats
+you can use any audio file you want for
+me
+i will go to opengameart.org i use this
+site for graphics and sounds when
+building games for javascript
+today i will just grab a random short
+sound file here
+so we can play it for this project
+which one will i pick i want something
+short and relatively loud so we can get
+nice sound bars out of it
+i will use this one i download it
+and i save it in my project folder as
+spell.wa
+wav we have our sound file and now i
+want to play this file every time i
+click the button
+in script.js on line 6 instead of
+console.log i will take
+this audio 1 variable from line 2 which
+holds the new file
+as its source and i call built in play
+method on it like this
+that's it when i click the button now
+the audio plays
+i'm not sure if you heard about this
+before but you can also add event
+listeners on audio
+and video elements for so called media
+events
+let me quickly show you what i mean i
+take my audio one variable
+and i call at event listener
+event i listen for is called playing it
+gets triggered when media starts playing
+or when it restarts whenever play an
+event on my audio one element occurs i
+will run this callback function and
+inside
+i will console log for example audio one
+started playing
+there are many other events you can
+listen for for example pause
+volume change and so on let me show you
+one more
+again i take audio one variable from
+line two
+and add event listener will be for event
+called ended callback function will run
+when this audio element stops playing
+and it will just say
+audio one ended
+let's test it i click the button and i
+get audio on started playing
+and as soon as it ends i get message
+that says audio one ended
+perfect today we are talking about
+basics of sounds with javascript
+and we are going all the way to building
+multiple different audio visualizers by
+the end of this video
+if you watched some of my pixel
+manipulation tutorials you know that
+some browsers
+don't allow us to analyze image for
+pixel data for security reasons
+here we face similar problem with sound
+files to create
+audio visualizer from a sound file we
+need to analyze it first
+to get data about timings and
+frequencies because of cross-origin
+resource sharing security measures
+some browsers don't allow us to analyze
+sound files like this unless they are
+stored on the same server
+you can only analyze files that are
+stored on the same server and when it
+comes to your local projects
+some browsers don't consider that to be
+the same origin
+so your analyzer will get blocked by
+some browsers i will show you two
+different ways now
+how to bypass this issue so we can
+create fully functional audio
+visualizers locally on our computer
+that can play any of our locally stored
+audio files
+one way to do this is to convert our
+audio file into a base64 string
+but unfortunately this string gets very
+long even if the sound is just couple of
+seconds so the second way we can do this
+is to create a file
+input html element this allows us to
+select a song from our computer
+using our browser window both of these
+solutions are quick and easy and they
+will solve
+all our problems let me show you how i
+will google something like
+sound to base64 and i will select this
+link
+this can also be done with a javascript
+but what i'm doing now is quicker
+let's keep our focus on audio analyzers
+today
+here i click choose file and in the
+pop-up window that opens
+i find the audio track i want to convert
+somewhere on my computer
+only do this conversion for very short
+sound files otherwise you will get a
+huge string
+which is not easy to work with after
+this i will show you a different
+technique you can use for long songs
+so i have my three second long sound
+file i called it spell
+and i just click here on encode audio to
+base 64.
+you can see even 3 second sound file is
+very long string already
+but it is great for our needs so far
+back in script.js you can see on line 2
+i created a new variable called audio1
+and i assigned it to new audio built in
+javascript class constructor
+that creates one new blank audio html
+element for me
+then on line 3 i am taking this variable
+and accessing its source property and
+setting it equal to path
+to my sound file there is even easier
+way to do this with simplified syntax
+i can delete line 3 completely and
+instead i can pass that file to my audio
+class constructor as an argument
+javascript will understand that this
+is a source for my new html audio
+element
+instead of passing it path to my file i
+will pass it a set of quotes
+and inside i paste the long base64
+string we just generated
+this will not work yet because we have
+to specify type
+i will just write it down it goes like
+this data
+colon audio
+slash x dash wav
+semicolon base 64.
+i need to delete this quote here it's
+not supposed to be there
+and here we go we are playing a sound
+file but we are not using actual file
+we are playing this long base64 string
+that contains all the sound data we need
+you can see this base64 string
+completely replaces the file
+and it also triggers the same messages
+in console for media events
+we did all of this because soon we will
+use javascript to analyze it
+so we can attach it to audio visualizer
+and some browsers
+because of security don't allow us to
+analyze files
+in certain circumstances it is also
+different browser by browser so this is
+a safe way to bypass that issue for
+every potential scenario
+so now we know the very basics of how to
+play audio files with javascript
+we also know how to listen for media
+events on these files so we can attach
+our custom code to them if we want to
+this video will be mainly focused on
+playing and analyzing sounds
+but i also want you to know that
+important part of javascript
+sound toolkit is a built-in set of
+properties and methods that allow us to
+generate
+sound purely with code you can also
+tweak them to sound like different
+musical instruments for example
+let me show you first on a very simple
+basic example
+so you understand how generating sounds
+with javascript works this can be useful
+even for your games or generative art
+projects
+also thank you so much for coding with
+me today it always makes me very happy
+when you say hi in the comments and you
+let me know
+that you coded along leave a comment and
+click the like please if you're getting
+any value today
+i have button one that plays sound from
+audio file
+i want another button that will play
+programmatically generated sound
+i go to index.html and i create another
+button element
+this time i will give it id of button
+too in script js on line 14
+i create a variable i call button2 and i
+set it equal to document.getelementbyid
+and i pass it id button2
+i take this button to variable and i
+call at event listener on it
+we will again listen for click event and
+whenever click event occurs
+i will play a custom callback function i
+will call it for example play sound
+this function doesn't exist yet so here
+on line 16 i write it
+function play sound and inside let's
+start by taking audio one variable from
+line 2
+and call play on it just to test if
+everything works
+perfect when i click button 2 the same
+audio plays
+as when i click button 1 but we don't
+want to play the same file
+we want to use javascript to generate
+sound with code
+and we want to play that when we click
+button 2. how do we do that
+it's time to talk about javascript web
+audio api
+similar to canvas context audio web api
+contains a set of built-in properties
+and methods that every browser can
+understand
+and it serves us as a toolkit to do a
+lot of sound magic
+directly in browser it is actually very
+similar to how canvas
+api methods allow us to create beautiful
+things by drawing graphics
+web audio api works on a principle of
+audio nodes
+and it can do so many things that i feel
+are not explored properly anywhere
+online yet
+you can do a lot of creative stuff and
+sound magic with it
+but this is an introduction crash course
+for beginners so i will use the simplest
+examples at first
+so you understand the basic concepts
+properly don't worry about the details
+yet we need solid foundations first
+we will take sound analysis to the next
+level by the end of this video but let's
+spend a little bit more time on the
+sound generation first
+to bring web audio api to our project is
+very simple
+in script.js file i create a constant
+variable called audioctx
+audio context and i set it equal to new
+window audio context
+or operator window.webkit audio context
+to make sure it works properly even in
+safari browser which is the last one
+from all the major browsers that has
+some limitations with support
+as of 2021 depending when you watch this
+video
+in most browsers this line could just be
+a simple const
+audio ctx equals the new audio context
+i'm using older syntax here to make sure
+it's compatible with everything
+but you won't have to do this forever
+the support is getting better
+if i console log this audio context
+variable from line 3 we can actually
+have a look at it
+there are a lot of parts in there don't
+worry about much of it
+just yet let's take it step by step so
+we understand what's going on
+on line three i'll use modern syntax you
+can simplify it like this and it will
+still work in most browsers
+you can see it still works and i see
+audio context in console because of the
+console log on line 4.
+you can look inside to see what's there
+there is a lot going
+on we will explore some of it today but
+don't worry about it too much now
+as i said before i want to play
+programmatically generated sound when i
+click button 2.
+on line 19 i create a new constant
+variable called oscillator
+and i set it equal to audio context from
+line 3
+dot create oscillator this is one of
+built-in methods of
+web audio api and it creates audio node
+that generates a tone
+i take this oscillator variable and i
+call connect on it
+connect is another built-in method it
+can be called on any audio node
+and you can either connect another audio
+node to it i could for example connect
+to a gain node to control its volume
+or you can connect it directly to
+destination which represents a default
+audio rendering device so most likely
+your
+speakers
+now i take this oscillator variable from
+1919 again
+and i set its type to for example
+triangle
+type will change the kind of waveform
+oscillator will output so basically it
+will change
+the sound i will show you in a minute
+this is all we need to create a basic
+oscillator sound node and play it
+i take oscillator and i call start on it
+if i press button 2 now i will get an
+endless sound which won't be very
+pleasant so let's do one more thing
+i will call javascript set timeout which
+expects two arguments
+callback function to run and how long to
+wait before we run it
+i want to wait thousand milliseconds one
+second
+and then i will take oscillator from
+line 19
+and i call stop on it so here i am
+adding event listener
+on my button for click event and when we
+click
+we will run play sound function play
+sound function will first create custom
+oscillator
+variable that holds one new audio node
+we take that oscillator and connect it
+to computer speakers
+we set its type to triangle we start the
+sound
+we wait one second and we stop the sound
+this is what it sounds like
+i can make it shorter by doing just 500
+milliseconds here
+or i can make it longer by playing it
+for two seconds like this
+let's just do a shorter one 200
+milliseconds
+oscillator type can be one of four main
+things
+sine which sounds like this
+square which sounds like this sawtooth
+is this
+[Music]
+let's make it a bit longer one second so
+you can better hear the difference
+sawtooth
+triangle
+square
+[Music]
+and sine
+so these are the very basics of how we
+use javascript to generate
+programmatic sounds these bass sounds
+can be connected to additional audio
+notes
+that change the sound in many different
+ways for the rest of this
+tutorial i will focus on sound analysis
+we will play our favorite music files
+and we will learn how to draw
+interactive animated
+audio visualizers if you are interested
+in learning more
+about generating sounds with javascript
+there is a part two to this video
+radu can you quickly tell us what you
+cover in that
+sure well yeah there's this one that
+we'll build in part two
+and in my vvd course i teach among other
+things how to make a piano app with
+audio visualizer
+and we are now making it work in virtual
+reality so that you can play it using
+your hands in front of the camera
+still need to figure some stuff out but
+it's probably done by the time this
+video comes out
+so check out the course it starts off
+easy
+but it becomes really interesting soon
+enough and i think you'll like it
+you can go and watch it now i will leave
+a link in the video description
+down below or you can finish watching
+this video and then continue to part 2
+if you want
+if you're still here let's build some
+audio visualizers now
+in index.html i delete both button
+elements
+and i create a div with an id of
+container
+inside i create html canvas element with
+an id of canvas1
+we will need it to draw our visualizer
+graphics
+i will also create html audio element
+with an id of audio1
+i will delete its source attribute and i
+will add keyword
+controls here like this to make the
+controls visible on our web page
+in style css i delete styles for body
+element completely
+i use asterisk selector to target all
+elements on the page and i give them
+margin 0
+button 0 and box size in border box to
+make sure our code looks the same
+in all different browsers this will
+disable browser-specific default styles
+div with an id of container will have
+position absolute
+top zero left zero and background black
+width hundred percent and height hundred
+percent
+canvas element will also have position
+absolute
+top zero left zero with hundred percent
+height hundred percent
+audio element will have width 50
+that's weird oh yeah my browser is
+zoomed in
+i zoom down to 100 percent
+margin top will be 50 pixels actually i
+want to use margin
+to center it horizontally so margin top
+bottom 50 pixels and left right will be
+auto
+this will only work if display is set to
+block like
+this yeah now it's centered
+that's it for html and css everything
+else we will do today will be
+with javascript in script.js file let's
+dig a bit deeper
+into web audio api let me show you some
+really cool things you can do with
+javascript
+and html canvas element i delete all the
+code except for these three lines
+on line 5 i need to grab hold of the new
+div with a class of container
+so const container is document dot get
+element by id
+container and let's set up canvas
+element
+i explained canvas in so many videos if
+this is your first video
+about canvas all you need to know is
+that canvas is a special html element
+that creates a field for us where we can
+draw interactive animated shapes and
+images with javascript
+canvas size defaults to 150 x 300 pixels
+so if i want my canvas to cover browser
+window i have to set canvas width
+to window in width
+and canvas height to window inner height
+like this
+same as web audio api canvas works as a
+set of built-in methods and properties
+that every browser can understand it has
+2d
+and webgl api which are separate and
+work in different ways
+today we will use 2d drawing methods to
+create our visualizers
+to get access to these methods i create
+a constant variable i call for example
+ctx
+shortcut for context and i set it equal
+to canvas.getcontext
+and i pass it to d now i call all
+built in canvas drawing methods from
+this custom ctx variable
+i will show you in a minute
+i will need another custom variable i
+will call it for example audio source
+i will just declare it i won't give it a
+value yet
+and another one i will call analyzer it
+will also be empty at first
+let's start with a very simple event i
+want the sound to play when we click
+anywhere on the container element we
+declared on line 5.
+since this element covers the entire
+page the sound will play when we click
+anywhere in the black area
+so type of event will be click and
+callback function that will run will
+contain some code
+at first i will just take audio 1
+variable from line 1
+and i call play on it just to test if
+everything works so far
+great it works my goal now is to play
+this sound
+analyze it and generate some shapes on
+canvas that move
+based on this sound how do we do that
+with javascript
+let's take it step by step and explain
+everything we need to understand to
+achieve that
+it's not that difficult actually i take
+audio source variable from line 10 and i
+call audio context
+from line 2 dot create media element
+source
+built-in method and i pass it audio 1
+variable from line 1.
+what i'm doing here i'm basically
+creating audio source from actual
+html audio element i am taking audio one
+variable from line 1
+and creating an audio node of it to
+serve as our source
+or to say it much simpler i am setting
+audio 1 variable from line 1
+as our source no need to overthink this
+then i take analyzer variable from line
+11 and i set it equal to audio context
+from line 2
+dot create analyzer create analyzer
+built-in method will create a special
+analyzer node
+this node is used to expose audio time
+and frequency data
+we will need this time and frequency
+data for our visualizers
+so i take audio source node which
+contains our audio one sound file
+as we declared on line 15 and i am
+connecting it to analyzer node we
+created on line 16.
+now this analyzer node can do its work
+and expose
+timing and frequencies on this file and
+give it to us
+as a data object i take analyzer node
+from line 16 again and i connect it to
+audiocontext.destination which is our
+default audio output device
+so most likely your computer speakers
+analyzer node has a built-in fft size
+property
+this is a special property that
+represents number of audio samples we
+want in our analyzer data file
+default value is 248 but we can assign
+it any of these values
+32 64 128 256
+and so on again this is very simple
+we will draw a bar for each set of
+samples so if you use higher number
+here you will get more analyzer bars
+drawn on canvas
+let's set it first to 64 to properly
+illustrate the effect
+i create a constant variable called
+buffer length
+and i set it equal to analyzer dot
+frequency bin count
+this is a read-only property on analyzer
+node and it simply contains a number of
+data values we will have in our analyzer
+data file
+we will draw a bar for each of these and
+this number is always
+exactly half of fft size property
+so when i set fft size property on line
+19 to 64
+we will get 32 here and our audio
+visualizer will have 32 animated bars
+we can go deeper into this but this is a
+beginner tutorial so for now this is all
+we need to know
+i save this bin count in my custom
+variable i call for example buffer
+length
+all we need to remember here is that
+buffer length is half of value of
+fft size from line 19 and it will
+represent number of bars
+in our first audio visualizer effect i
+will create another custom variable i
+call for example data array
+and i set it equal to new uint8 array
+and i pass it
+buffer length from line 20. what's
+happening here
+i need the data my analyzer returns on
+line 20 to be in a specific format so
+i'm creating a custom variable called
+data array here on line 21 and i'm
+converting buffer length from line 20
+into a special type of array
+called uint 8 array this type of array
+can contain only elements that are
+unassigned
+8-bit integers again no need to dig any
+deeper for now i am simply taking buffer
+length from line 20 and i am converting
+it to a format i need
+and then i am saving that new formatted
+array in data array variable
+here on line 21. now we can finally get
+ready to draw something nice on canvas
+we will start with a very basic bar
+visualizer effect to make sure we
+understand exactly what's going on
+and then we will play with colors sizes
+shapes
+and filters to draw something more
+interesting i want you to have a solid
+understanding of what's going
+on first i want our bar visualizer to go
+from left to right
+and i want the bars to grow from bottom
+of canvas towards the top
+the first version is basically going to
+be the usual visualizer you see
+everywhere
+i want each bar to have width that when
+added next to each other they fill
+canvas with
+i create custom constant variable i call
+for example bar width and i set it equal
+to canvas width divided by buffer length
+what i did here this variable is a width
+of a single bar
+in our visualizer and as i said before
+buffer length is the amount of details
+we see about
+frequencies in our analyze sound file
+so each data point in this buffer length
+will represent one bar
+in our visualizer single bar in our
+visualizer will have width of canvas
+width
+divided by buffer length which is the
+number of data samples we have available
+currently buffer length is 32 because 64
+divided by 2 is
+32. i will also need bar height
+this will need to be a led variable
+because it will change its value
+all the time as our visualizer animates
+to music
+i will also have x variable this will
+represent horizontal x-coordinate
+each time i draw one bar i will jump
+horizontally to the right by the amount
+of bar width from line 23 so that i can
+draw bars
+next to each other horizontally now i
+will animate the bars on canvas
+my bars will change height as music
+plays and as
+frequencies change i will create a
+custom function i call for example
+animate
+this function will contain code that
+will run over and over creating our
+animation loop
+first i want to clear canvas of old
+paint from previous frames so i take ctx
+variable from line 9
+and i call built in clear rect method on
+it
+clear rectangle this method simply takes
+4 values
+to determine what area of canvas we want
+to clear
+and it will delete everything there i
+want to clear the entire canvas so i
+start at coordinates 0
+0 and i go all the way to canvas with
+canvas height
+now i need to take analyzer node from
+line 16 and i call
+get byte frequency data built-in method
+on it
+and i pass it formatted data array
+variable from line 21.
+again no need to overthink this line we
+are learning the basics
+what's happening here i'm calling get
+byte frequency data
+and that method takes data array from
+line 21 we pass to it
+as an argument and it copies the current
+frequency data into that array
+each item in the array now represents
+decibel value for a specific frequency
+frequency data is composed of integers
+whole numbers between 0 and 255
+this will determine height of each sound
+bar in our audio visualizer
+i will show you in a minute and since we
+are inside animation loop
+this data array will be getting updated
+over and over as the sound plays
+and height of our animated bars will be
+changing based on that
+here i need to put some code that will
+actually draw the visualizer
+it can be bars circles falling particles
+pulse and images
+in a way you could take any canvas
+particle effect we built in this series
+and you can make it move to music but to
+do that is a bit more advanced
+let's start with the basics to make sure
+everything is explained properly first
+i will use built-in request animation
+frame method that simply takes a
+function name
+and calls it if i give it animate the
+name of its parent function from line 26
+it will create animation loop to trigger
+animation i call animate like this
+now back to line 30 and let's start with
+drawing
+very simple bar visualizer first i will
+create a for loop that will cycle
+through the entire data array
+as i said data array variable from line
+21 contains
+number of elements audio samples that
+correspond to half of value we set on
+line 19
+so right now we have 32 elements in data
+array for each time stamp
+and each element is an unassigned 8-bit
+integer
+it is a number between 0 and 255
+and this number corresponds to decibel
+value of each
+frequency maybe i'm over explaining here
+all that i'm doing here
+on line 31 i'm taking bar height
+variable from line
+24 and i'm making it equal to this 8 bit
+integer in data array which represents
+decibel value
+louder sounds will produce longer bars
+my background is black so i will make
+the bars white
+now i use built-in fill rect method fill
+rectangle
+which takes x y width and height and
+draws a rectangle on canvas
+we are inside a for loop that cycles
+through the entire data array so this
+rectangle will be written
+for each frequency data point in that
+array
+horizontal x coordinate will be x
+variable from line 25
+because i want the bars to grow from
+bottom of canvas and go upwards
+vertical y coordinate will be canvas
+height which is on the bottom of screen
+minus bar height variable from line 31
+width will be bar width we calculated on
+line 23
+and height will be bar height from line
+31.
+so this is x y width and height of my
+sound bar
+this for loop will create 32 sound bars
+some of them
+might be zero pixels tall if they don't
+have many decibels at that point
+each time i draw one bar i take x
+variable from line 25
+and i increment it by bar width from
+line 23
+this will put the bars next to each
+other horizontally
+when i click sound place but we have no
+animation let me quickly figure out why
+i will take audio 1 and audio context
+variables from lines
+1 and 2 and i paste them inside my event
+listener like this
+i also need to delete the console log
+sound plays but we are not drawing any
+bars i will check browser console and i
+don't see any errors
+these two red messages i have in console
+are
+just something with favicon it's some
+google chrome
+bug i suppose it's not related to our
+project
+i comment out line 10
+on line 11 i create a constant variable
+called audio1 again
+and i set it equal to
+document.getelementbyid
+and i pass it id audio one it's this
+element on line 13 in index html
+i then set its source to my very long
+data string
+to copy this long line of code i enable
+word wrap in my browser
+i highlight the beginning of the string
+then i go all the way down
+and on my windows pc using vs code
+editor i hold down
+left shift key and i left click my mouse
+to highlight all the code in between
+i cut it and i paste it in quotes as
+source on line 12.
+then i disable word wrap again
+and i delete line 10.
+this is an alternative way to bring
+audio file to your project
+still no sound bars ok i see what's
+going on
+x is a variable on line 23 and down here
+i increase it as my for loop
+cycles through audio data points so i'm
+drawing it but i'm pushing my bars
+endlessly to the right very fast
+here on line 27 i need to make sure that
+for every animation loop i reset my x
+back to zero
+to make the new set of audio bars appear
+horizontally from left to right again
+it should work now yes
+congratulations on building your first
+audio visualizer
+for the rest of this video i will focus
+on canvas graphics and animations
+to bring our project to the next level
+and polish it up
+i will show you how to make shapes and
+colors move to music in different ways
+and let's see if we come up with
+something interesting click like please
+if you're ready to join me for the final
+and my favorite part of this tutorial
+creative coding experiments
+so we have a very basic working audio
+i built this course as a deep dive into
+javascript audio from basics to advanced
+i hope you got a lot of value out of it
+on line 31 i can adjust my bar height
+variable
+in any way i want if i multiply it times
+2
+my bars are now double the original
+height
+i want our visualizer to be able to
+animate to any sound file
+regardless of length i could just
+convert it to base64 data string and use
+it as a source here on line 11
+but as you can see even three seconds of
+sound are a very long line of code
+imagine what would happen if i did this
+with a three minute song i could also
+just put a simple path to my source file
+directly here on line 11
+but in some browsers it will fail when
+we try to connect this file
+to analyzer because of course origin
+resource sharing security measures
+that's why we converted our audio source
+file into this base64 string in the
+first place
+there is another way to load audio file
+to our project
+and analyze it without triggering
+cross-origin resource sharing
+restrictions and it's also very simple
+i go to index.html and on line 14 i
+create input element
+and i give it type file
+id will be file upload for example
+and accept attribute will be set to
+audio
+slash asterisk to make sure this input
+element
+takes only sound files it will give us a
+button
+that says choose file and when user
+clicks it it will allow them
+to browse their computer for locally
+stored audio files
+in style css i set this file upload
+input element to position absolute top
+100 pixels
+150 pixels text color will be white so
+that we can see this label that
+currently says no file chosen
+against our black background that index
+will be set to 100
+to make sure this input is always on top
+of other elements and can be interacted
+with
+in script.js i go up here on line 3
+and i want to get a reference to it with
+javascript
+new constant variable called for example
+file is equal to document.getelementbyid
+and i gave it id file upload on line 10
+i have event listener for click event on
+container element
+every time i click anywhere on the
+container it plays a short sound
+and shows visualizer bars i want to do
+something similar for this file input
+element
+i take file variable from line 3 and i
+give it event listener for change event
+this will trigger every time we use it
+to select a new
+file in this event listener we have
+access to a list of audio elements that
+were selected
+i can access it with this dot files
+files is a property on html input
+element
+let me console log it so you can see i
+click
+choose file it will also trigger the
+click event on container so it plays the
+short sound
+it's fine for now new window pops up
+and in there i can select my local music
+files
+i select one and i open browser console
+to see what was printed in there because
+i am console login this dot files
+you can see it gives us file list object
+and first element in there
+with index 0 is this audio file i
+selected
+i want to save it in a variable so
+constant files
+is equal to this dot files this file
+list object we just inspected in console
+i go up to line 11 and i copy this
+entire line of code
+const audio 1 equals to
+document.getelementbyid
+one i am creating a javascript reference
+to html element
+with an id of audio one i created in
+index.html
+this time i will give it this selected
+local audio file as a source
+so audio 1 source is equal to url
+dot create object url
+i pass it files variable from line 43
+and since we console logged it before we
+know
+that my song is the first item in there
+so index 0.
+in programming we always start counting
+from zero not from one
+create object url takes whatever we pass
+to it
+and it converts it into a string of 16
+bit unassigned integers
+we are basically doing very similar
+thing we did before when we converted
+the first
+short audio file to a line of base64
+code
+so when we select new local file and the
+change event is triggered
+i take the file list object it creates
+i create a reference to audio html
+element on my page
+and i access its source attribute then i
+take this selected local audio file
+i convert it to a line of code and i set
+that
+as my audio source
+then i take audio one variable from line
+44 again
+and i call load built in method on it
+the load method is used to update the
+audio element after changing the source
+or other settings
+now my file is ready and setup and i can
+call play on it
+everything else will be the same as
+before
+we create audio source we create
+analyzer we connect audio source to
+analyzer node
+connect analyzer to destination which is
+computer speakers
+we set fft size buffer length and we
+convert it
+to uint 8 array then we calculate width
+height and horizontal x coordinate and
+animate all of that with animation loop
+i take code between lines 15 and 39
+i copy it and i paste all of that on
+line 48
+we have a lot of code repetition here we
+will deal with that a bit later
+i just want to show you how this works
+first at this point you can use this
+choose file button to select any local
+audio files
+and visualizer will animate and move to
+your music
+so this is how you can analyze and
+visualize audio files
+of any length without triggering cross
+origin resource sharing restrictions in
+your browser
+for the rest of this video we will play
+with code between lines
+32 and 35 this code is responsible for
+what our visualizer actually looks like
+right now we are just drawing simple
+white rectangles but it can look much
+better
+we also have identical code here between
+lines 66 and 69
+let's output this code to a custom
+function so we can change it only in one
+place and it will change our visualizers
+all across the code base
+on line 76 i create a custom function i
+call for example
+draw visualizer i'm going to use uk
+spelling here we spell it with an s
+my function will need some bits passed
+as arguments i will give it buffer
+length
+x
+bar width bar height
+and data array then i can take this
+entire for loop
+and i can put it inside my reusable draw
+visualizer function
+i could output more code here but i have
+reference to analyzer here on line 64
+and i would have to deal with passing
+that around let's just keep it simple
+for now
+on line 65 i just take my draw
+visualizer function and i call it from
+here like this
+[Music]
+ok that works i also take code between
+lines 31 and 36
+i delete it and replace it with my
+custom function that contains the same
+code
+now that i have my visualizer drawing
+code in one place
+let's try to do some experiments how
+about we dynamically change colors based
+on frequencies of our music
+i create three new constant variables
+called red
+green and blue
+and on line 72 in fill style i will
+concatenate
+string rgb plus red from 969
+plus comma in quotes like this plus
+green
+from line 70 plus another comma
+plus blue
+plus closing bracket now i can
+dynamically create any color
+by assigning different values between 0
+and 255
+to these 3 variables i need to make sure
+i spell green on line 70 correctly
+any color can be made by combining
+certain amount of red
+green and blue so far i'm just hard
+coding color values but
+what if i make these numbers dynamic for
+example what if i set amount of write
+to index from line 67 times
+bar height okay that's very high number
+i can divide bar height by 20.
+now we can see that current height of
+our bars and also their horizontal
+position
+affects their color amount of green can
+be i
+times four for example i'm just playing
+with random values now
+blue could be for example bar height
+divided by two
+by including i index from the for loop
+i am tying color to horizontal position
+because i
+increases as the for loop cycles and new
+bars are added horizontally from left to
+right
+at the same time we are connecting color
+to current bar height
+so the same bar will have different
+color when it's short
+and when it's long you can play with
+these to see what you get have fun
+experimenting
+on line 19 i increase fft size to
+128 you can see it gives us more
+visualizer bars
+256 gives us even more this is what 512
+looks like
+1024 notice that the color composition
+of our bars
+changes as well because we tied colors
+to index and adding more bars
+gives us higher index numbers our
+rectangles are starting to look much
+more like simple lines
+i will go back to 128 or maybe 64.
+so far we have bars going in one
+direction and with most
+audio files you will have highest bars
+on the left and
+very short bars on the right because
+there aren't enough decibels in these
+high frequencies
+what if i wanted my visualizer to be
+mirrored and symmetrical
+where sounds rise from the middle to
+both sides
+it's very easy to do you can do it in
+one for loop or if you want different
+colors on each half you can also copy
+the same
+for loop again now the second set of
+bars draws behind the right edge of
+screen as x variable increases
+through both four loops on line 52
+i set my total bar width to cover only
+half of my canvas width
+i do the same on line 23 so that the
+effect on click event looks identical
+now you can see what was hidden behind
+the right edge
+we get the bars next to each other like
+this because x doesn't reset to 0
+until we run another animation loop here
+on line 28
+until that point x just increases on
+line 74
+and 83 through both for loops i want the
+first set to be flipped so they start
+from the middle of canvas
+i do that by adjusting horizontal x
+value on line 73 like this
+yay
+it will also work for a music file
+on line 19 i change fft size to 32
+on line 72 i set fill style to white
+i call fill rectangle and i pass it the
+same values i pass it on line 75
+i push its vertical y coordinate 30
+pixels upwards
+and i set height of this bar to 20
+pixels to make sure there's a small gap
+now we have these small white cups on
+top of our bars
+[Music]
+i do the same thing for the right side
+i need to adjust its x coordinate
+otherwise i'm just drawing it on top of
+the other side
+okay this looks interesting what if i
+liquefied now using css filters
+i go to style css and on line 20 i use
+css filter property
+combination of blur and contrast is used
+for liquid effect
+i tried blur 5 and contrast 10.
+i can tweak these values liquid effect
+doesn't look great on this
+maybe if i give it more bars let's go to
+line 19 in script js and try 2 048 bars
+1024 well the filter is doing something
+but it's not exactly liquid effect
+let's reduce the amount of green on line
+70
+and on line 81
+in style css on line 20 i disable filter
+for now
+i will also tweak blue and red
+interesting what the colors are doing
+i reduce the number of bars to 64.
+in draw visualizer i remove the first
+for loop
+let me show you how to make circle
+visualizer now we are entering slightly
+more advanced territory and i will play
+with canvas rotation
+and maybe trigonometry don't feel bad if
+you don't understand everything
+this is course for beginners everything
+i will use are important creative coding
+techniques but they might take more than
+one tutorial to master
+just follow along and i will explain
+what i'm doing and why am i doing that
+i want to rotate canvas every time i
+draw a bar
+on canvas we don't rotate elements we
+rotate the entire canvas
+draw the element and then we put canvas
+back as it was
+this will result into rotated drawing i
+won't go in details on canvas rotation
+i have a deep dive video explaining it
+properly for beginners
+i will link it in the video description
+before we rotate canvas i call
+build in save method here on line 69
+this will create
+kind of a save point and when i call
+restore method
+later on all the changes between save
+and restore
+will be restored back to the original
+state when save was originally called
+this will work for most canvas settings
+before we rotate something on canvas we
+need to set rotation center point
+we do that by using translate method
+this method
+will take x and y coordinate and move it
+from position 0
+0 to a new position that will be center
+of our rotation
+i want everything to rotate around the
+center so i set translate to canvas
+width divided by 2
+for x and canvas height divided by 2 for
+y
+now i can use canvas rotate method that
+will rotate everything
+based on the value i pass to it it
+doesn't understand degrees it needs
+values in radians i will just put
+something random in here to see what
+happens
+okay this is a mess but that's because i
+never restored canvas
+so here i save my current canvas
+settings i translate coordinates 0
+0 to the middle of the canvas making
+that rotation center point
+i rotate canvas by some value this is
+most likely wrong i will get back to
+this in a second
+now i rotated my canvas i will actually
+draw my shapes
+and then i call restore which will look
+at this save method
+and it will restore all canvas settings
+to that point removing all canvas
+translates and rotates
+that happened in between one thing you
+need to understand is that when i
+translate canvas position 0 0
+which normally sits in the top left
+corner when i translate it to different
+coordinates so in this case
+middle of my canvas horizontally and
+vertically
+shapes drawn after that translation will
+see that point as zero
+zero so everything is being pushed
+further right and down by that value
+on line 76 i set x and y to 0 0 which
+will place it in the middle of the
+screen because that's my new location
+0 0 as i translated it here on line 70.
+i do the same on line 78 now you can see
+that center of canvas has been treated
+as location 0
+0 and this canvas rotates by some
+multiplier of i
+index variable from outer for loop even
+though my bars grow from the bottom to
+top
+they actually grow in a circle now
+because i save canvas i rotate it
+then i draw that bar and then i restore
+my canvas back
+don't worry if this feels like a bit too
+much to wrap your head around canvas
+rotation is notoriously difficult and it
+takes couple of projects and experiments
+to understand it properly
+this is a beginner level tutorial you
+are doing great if you are still coding
+alone don't feel you need to understand
+everything on the first try
+it took all of us some time to learn
+this you can make the bars
+shorter on line 68. look what happens if
+i replace plus sign with multiply here
+on line 71.
+that looks nice
+the middle white area is these two lines
+of code right here
+let's remove them i will also remove red
+green and blue variables
+you already know how to attach colors to
+horizontal position and bar height
+i want to create a spiral visualizer so
+now i will tie colors to index
+but in a different way i will use hsl
+color declaration hue saturation
+lightness
+all we need to know is that hue the
+first value is an angle on hsl color
+wheel
+so as a u value increases we cycle
+through the entire color spectrum
+i create a constant variable i call for
+example u and i set it to 40.
+on line 73 i create hsl color
+declaration again
+and i concatenate string here same as we
+did with rgb
+but this time i can only use one
+variable for hue and i can still get the
+entire spectrum of all colors
+right now u is 40 which is somewhere
+between red and green
+i'm missing a bracket here
+instead of this hard-coded value of 40 i
+set hue to index
+all i need to know about hue in hsl
+color declaration is that the 0 is red
+120 degrees
+is green and 240 is blue
+then 360 is red again and you can keep
+increasing
+it will keep cycling around the color
+circle
+all the values in between are different
+combinations of these colors
+i times 15 cycles through the entire
+color spectrum and starts from red again
+this is how you build a very simple
+circle visualizer and how you tie colors
+to indexes
+there is much more we can do with it
+let's start by increasing number of bars
+on line 19 i set fft size to 512
+and also on line 48.
+on line 68 i make the bars bigger
+i have a lot of indexes in my array so
+use cycles too fast
+i adjust it on line 72
+let's try 256 on line 48 and on line 19.
+okay i will do 128
+look what happens if i mess with math.pi
+online 71.
+i can make it drop in on itself now we
+are getting a spiral
+i adjust hue on line 72 so we can better
+see what i just did
+i think this looks really cool
+bars are basically doing a second circle
+around and it creates really interesting
+visualization
+it also depends on what music you play
+some audio files
+can stretch our visualizer more than
+others
+on line 23 i set bar width to 5 pixels
+how about 15 pixels
+this one looks great coding experiments
+you never know what you discover
+i also set bar width to 15 on line 52.
+we are creating a spiral of colors as
+differently colored bars lay on top of
+each other
+again on line 71 look how much it
+changes the effect if i swap operator to
+plus
+this looks interesting in a different
+way there is still symmetry to it
+especially if i adjust
+you on line 72 you should be able to see
+the branches
+i will play with hue
+and now i will try to apply liquid
+filter again to see what we get
+let's uncomment line 20 in style css for
+a while
+we need more bars in our effect
+on line 48 i try 512
+also on line 19. now hue is too much
+so i adjust it on line 72.
+yeah this is what i was going for what
+if i add more blur and more contrast
+even more contrast i think we need to
+give canvas black background color to
+make the edges look liquid as well they
+still look blurry
+when you come up with something nice in
+your experiments i want you to use your
+visualizer to play your favorite music
+and listen to it on maximum volume
+i hope you are having fun exploring
+javascript with me and you are getting a
+ton of value
+and inspiration today please let me know
+what you think if people like it i can
+make more projects like this
+it's hard for me to know what will
+resonate with people without getting
+feedback so every one of your comments
+counts
+i disable filter on line 20 install css
+it looks interesting even without the
+filter doesn't it
+line 71 is what changes the final shape
+of our visualizer
+method pi multiplied by something
+determines how far along the circle we
+rotate our bars
+the higher number i use here the more it
+will spiral in
+on itself
+this is a pretty nice spiral
+i can try to blur it
+if you want some static circle in the
+middle you can add it here to bar height
+on line 68.
+high frequencies rarely get triggered so
+it might be better to spiral it up a bit
+more so we don't get
+area that doesn't move like this
+even though it also looks quite unique
+some people might like this
+i can also go wild on the spiral let's
+do method pie times
+10. some songs won't really trigger it
+all the way to dark blue
+i like to play with these things i spend
+a lot of time experimenting like this
+for fun off camera today i'm just
+showing you a bit
+behind the scenes
+i'm not sure if someone actually wants
+to see my process or you prefer
+me to give you final values and you
+don't care how i got there
+it looks like i can reload my css and
+apply filter without restarting my song
+interesting this is extreme blur
+sometimes subtle changes in hue color
+could be better just to show off layers
+without actually having to circle
+through all the colors
+i guess visuals like this are quite
+subjective anyway
+on line 73 i tied hue to index to
+position of this particular bar in the
+array
+hsl color declaration is value for view
+saturation and lightness
+i can also replace any of these values
+with a variable and make them dynamic
+let me show you how to do it with
+lightness we usually keep it on 50
+which is color not affected by light or
+dark
+lightness close to zero is black and
+close to 100 is
+white let's try and tie lightness to far
+height
+short bars should be dark long bars
+should be light
+and middle sized bars should be full
+color that's
+too much i try bar height divided by two
+divided by three
+this is the effect i used in intro and i
+love it we can also take what we learned
+today and apply it to a particle system
+i built all different kinds of particle
+systems here on the channel
+if you like this video please let me
+know in a comment and i can show you how
+to replace
+this draw visualizer custom function
+from line 66
+with a full-on particle system then we
+can literally take any of my canvas
+animation videos
+even pixel manipulation effects on
+images and we can make them dance to
+music
+we can also separate high and low
+frequencies and make different effects
+for different instruments
+we have just scratched the surface of
+sound magic you can achieve
+with web audio api if you are a beginner
+and you code it all along you are doing
+a great job
+thank you so much for letting me be part
+of your self-taught coding journey
+my goal is to inspire you to continue
+learning and to help you as much as i
+can
+i hope this helped you to understand how
+sound analysis works
+and i'm looking forward to see some of
+your creative audio visualizers
+if you coded with me today let me know
+in the comments you can just say
+something like i finished the project
+there is a part 2 to this tutorial with
+radu
+link in the video description check it
+out i'll see you soon
+
