@@ -13,5 +13,5 @@
 <a href="https://codepen.io/franksLaboratory/pen/wvoNqdv">Audio Visualizer 1 (vanilla JS) CodePen</a> You can see how the code is supposed to work and compare your code to his (or mine that's posted here) to get you back on track.<br>
 <a href="https://codepen.io/franksLaboratory/pen/wvoNqdv">Using the Web Audio API</a> From the MDN Web documents (The makers of Modzilla Firefox Browser).<br>
 
-<p>This is part 1</p>
+<p><b>This is part 1</b></p>
 
