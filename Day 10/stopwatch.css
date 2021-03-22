@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+body {
+	background: #7909a9;
+	font-family: "Pangolin", cursive;
+	height: 100%;
+	color: #0ff1c1;
+}
+
+.wrapper {
+	width: auto;
+	margin: 30px; auto;
+	text-align: center;
+}
+
+h1, h2, h3 {
+	font-weight: 100;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+	
+#seconds, #tens {
+	font-size: 50px;
+}
+
+button {
+	border-radius: 5px;
+	background: #7909a9;
+	color: #0ff1c1;
+	border: double 4px #0ff1c1;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 18px 10px;
+	width: 180px;
+	margin: 10px;
+	outline: none;
+}
+
+button:hover {
+	transition: all 0.5s ease-in-out;
+	background: #0ff1c1;
+	border: double 4px #191c20;
+	color: #191c20;
+}
