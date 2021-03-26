@@ -21,12 +21,13 @@ PS. I am really starting to loathe Markdown too 😞
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 EXTRA NOTES
 
->How to define a variable<
+>How to define a variable
 
-start with: var        
-name said variable: person 
-assign the variable: = "SDesires"
-don't forget the semi-colon: ;
+>start with: var        
+>name said variable: person 
+>assign the variable: = "SDesires"
+>don't forget the semi-colon: ;
 
-example: 
+>example: 
+
 ```var person = "SDesires";```
