@@ -21,14 +21,12 @@ PS. I am really starting to loathe Markdown too 😞
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 EXTRA NOTES
 
-<h5>The basics</h5>
+>How to define a variable<
 
-<u>How to define a variable</u>
+start with: var        
+name said variable: person 
+assign the variable: = "SDesires"
+don't forget the semi-colon: ;
 
-start with | name said variable | assign the variable | don't forget the semi-colon!
----------------------------------------------------------------------------------------
-var         | person             | = "SDesires"        | ;
-
-
-
-
+example: 
+```var person = "SDesires";```
