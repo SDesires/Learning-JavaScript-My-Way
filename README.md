@@ -23,9 +23,12 @@ EXTRA NOTES
 
 >How to define a variable
 
->start with: var        
+>start with: var   
+>     
 >name said variable: person 
+>
 >assign the variable: = "SDesires"
+>
 >don't forget the semi-colon: ;
 
 >example: 
