@@ -18,3 +18,17 @@ I will be doing things from different sources and other codenewbies are welcome 
 Don't ask me how to do pull requests or sync repos or any of that other stuff, because I am still trying to figure that out. One thing at a time lol.  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 PS. I am really starting to loathe Markdown too 😞
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+EXTRA NOTES
+
+<h5>The basics</h5>
+
+<u>How to define a variable</u>
+
+start with | name said variable | assign the variable | don't forget the semi-colon!
+---------------------------------------------------------------------------------------
+var         | person             | = "SDesires"        | ;
+
+
+
+
